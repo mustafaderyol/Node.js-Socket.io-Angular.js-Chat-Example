@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-theme.css">
+
+</head>
+<body ng-app="chatApplication">
+<div ng-controller="messagePush">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-comment"></span> Chat
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="chat">
+
+                        <li  ng-repeat="item in chatPanelMessages" ng-class="isMe(item.username) ? 'right clearfix' : 'left clearfix'">
+                        <span ng-class="isMe(item.username) ? 'chat-img pull-right' : 'chat-img pull-left'">
+                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>{{item.date}}</small>
+                                    <strong class="pull-right primary-font">{{item.username}}</strong>
+                                </div>
+                                <p>
+                                    {{item.message}}
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" ng-model="message" class="form-control input-sm" placeholder="Type your message here..." />
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" id="btn-chat" ng-click="pushMessageFunction()">
+                                Send</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+</div>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="assets/angular.min.js" ></script>
+<script src="assets/socket.io.js" ></script>
+<script src="assets/angular-socket-io-master/socket.js" ></script>
+<script src="app.js" ></script>
+<script>
+
+    var socket = io.connect('http://localhost:3000');
+    socket.on('alici',function (data) {
+        console.log(data);
+    });
+
+</script>
+</body>
+</html>
