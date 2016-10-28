@@ -25,7 +25,8 @@ angular.module('chatApplication', ['btford.socket-io']).
         }
 
         $rootScope.emojiClickFunc = function (data) {
-            $scope.message = $scope.message+" "+data;
+            $scope.message = $scope.message+" "+data+" ";
+            $( "#btn-input" ).focus();
         };
 
         $rootScope.textAreaSendKeypressFunction = function(event){

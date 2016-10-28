@@ -7124,6 +7124,7 @@ input.textarea {
   height: 34px;
   z-index: 100;
   cursor: pointer;
+  font-size: 20px;
 }
 .emojis:active {
   opacity: 0.9;
@@ -7141,21 +7142,28 @@ input.textarea {
 .emojiDiv{
   position: absolute;
   padding:0px;
-  top:-105px;
-  width: 300px;
-  height:100px;
+  top:-300px;
+  width: 600px;
+  height: 300px;
   background-color: #f2dede;
   border-radius: 10px;
   cursor: default;
+}
+.emojiDiv > .panel > .panel-body{
+  margin-left: -20px !important;
+  height: 210px !important;
+}
+.emojiDiv > .panel{
 }
 .emojiDivHide{
   display: none;
 }
 .emojiDiv ul{
-  margin-left: -40px !important;
+  margin-left: -10px !important;
   list-style: none;
 }
 .emojiDiv ul li{
   float: left;
   cursor: pointer;
+  margin: 5px;
 }
