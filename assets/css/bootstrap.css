@@ -7118,14 +7118,10 @@ input.textarea {
 }
 .emojis {
   position: fixed;
-  display: block;
   bottom: 8px;
   left: 7px;
   width: 34px;
   height: 34px;
-  background-image: url(http://i.imgur.com/5WUpcPZ.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   z-index: 100;
   cursor: pointer;
 }
@@ -7141,4 +7137,25 @@ input.textarea {
 .avatar{
   width: 80px;
   font-size: medium;
+}
+.emojiDiv{
+  position: absolute;
+  padding:0px;
+  top:-105px;
+  width: 300px;
+  height:100px;
+  background-color: #f2dede;
+  border-radius: 10px;
+  cursor: default;
+}
+.emojiDivHide{
+  display: none;
+}
+.emojiDiv ul{
+  margin-left: -40px !important;
+  list-style: none;
+}
+.emojiDiv ul li{
+  float: left;
+  cursor: pointer;
 }

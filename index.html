@@ -26,7 +26,72 @@
         </div>
     </li>
 </ol>
-<input class="textarea" id="btn-input" type="text" placeholder="Birşeyler yaz...!" ng-keypress="textAreaSendKeypressFunction($event)" autofocus ng-model="message" /><div class="emojis"></div>
+<input class="textarea input-lg"  id="btn-input" type="text" placeholder="Birşeyler yaz...!" ng-keypress="textAreaSendKeypressFunction($event)" autofocus ng-model="message" />
+<div class="emojis">
+    <span id="toggleEmojiDiv" ng-click="toggleEmojiIsShow = !toggleEmojiIsShow" ng-mouseover="toggleEmojiIsShow=true">😁</span>
+    <div  ng-class="toggleEmojiIsShow ? 'emojiDiv' : 'emojiDiv emojiDivHide'" ng-mouseout="toggleEmojiIsShow=false" ng-mouseover="toggleEmojiIsShow=true">
+        <ul>
+            <li ng-click="emojiClickFunc('😁')">😁</li>
+            <li ng-click="emojiClickFunc('😂')">😂</li>
+            <li ng-click="emojiClickFunc('😃')">😃</li>
+            <li ng-click="emojiClickFunc('😄')">😄</li>
+            <li ng-click="emojiClickFunc('😅')">😅</li>
+            <li ng-click="emojiClickFunc('😆')">😆</li>
+            <li ng-click="emojiClickFunc('😉')">😉</li>
+            <li ng-click="emojiClickFunc('😊')">😊</li>
+            <li ng-click="emojiClickFunc('😋')">😋</li>
+            <li ng-click="emojiClickFunc('😌')">😌</li>
+            <li ng-click="emojiClickFunc('😍')">😍</li>
+            <li ng-click="emojiClickFunc('😏')">😏</li>
+            <li ng-click="emojiClickFunc('😒')">😒</li>
+            <li ng-click="emojiClickFunc('😓')">😓</li>
+            <li ng-click="emojiClickFunc('😔')">😔</li>
+            <li ng-click="emojiClickFunc('😖')">😖</li>
+            <li ng-click="emojiClickFunc('😘')">😘</li>
+            <li ng-click="emojiClickFunc('😚')">😚</li>
+            <li ng-click="emojiClickFunc('😜')">😜</li>
+            <li ng-click="emojiClickFunc('😝')">😝</li>
+            <li ng-click="emojiClickFunc('😞')">😞</li>
+            <li ng-click="emojiClickFunc('😠')">😠</li>
+            <li ng-click="emojiClickFunc('😡')">😡</li>
+            <li ng-click="emojiClickFunc('😢')">😢</li>
+            <li ng-click="emojiClickFunc('😣')">😣</li>
+            <li ng-click="emojiClickFunc('😤')">😤</li>
+            <li ng-click="emojiClickFunc('😥')">😥</li>
+            <li ng-click="emojiClickFunc('😨')">😨</li>
+            <li ng-click="emojiClickFunc('😩')">😩</li>
+            <li ng-click="emojiClickFunc('😪')">😪</li>
+            <li ng-click="emojiClickFunc('😫')">😫</li>
+            <li ng-click="emojiClickFunc('😭')">😭</li>
+            <li ng-click="emojiClickFunc('😰')">😰</li>
+            <li ng-click="emojiClickFunc('😱')">😱</li>
+            <li ng-click="emojiClickFunc('😲')">😲</li>
+            <li ng-click="emojiClickFunc('😳')">😳</li>
+            <li ng-click="emojiClickFunc('😵')">😵</li>
+            <li ng-click="emojiClickFunc('😷')">😷</li>
+            <li ng-click="emojiClickFunc('😸')">😸</li>
+            <li ng-click="emojiClickFunc('😹')">😹</li>
+            <li ng-click="emojiClickFunc('😺')">😺</li>
+            <li ng-click="emojiClickFunc('😻')">😻</li>
+            <li ng-click="emojiClickFunc('😼')">😼</li>
+            <li ng-click="emojiClickFunc('😽')">😽</li>
+            <li ng-click="emojiClickFunc('😾')">😾</li>
+            <li ng-click="emojiClickFunc('😿')">😿</li>
+            <li ng-click="emojiClickFunc('🙀')">🙀</li>
+            <li ng-click="emojiClickFunc('🙅')">🙅</li>
+            <li ng-click="emojiClickFunc('🙆')">🙆</li>
+            <li ng-click="emojiClickFunc('🙇')">🙇</li>
+            <li ng-click="emojiClickFunc('🙈')">🙈</li>
+            <li ng-click="emojiClickFunc('🙉')">🙉</li>
+            <li ng-click="emojiClickFunc('🙊')">🙊</li>
+            <li ng-click="emojiClickFunc('🙋')">🙋</li>
+            <li ng-click="emojiClickFunc('🙌')">🙌</li>
+            <li ng-click="emojiClickFunc('🙍')">🙍</li>
+            <li ng-click="emojiClickFunc('🙎')">🙎</li>
+            <li ng-click="emojiClickFunc('🙏')">🙏</li>
+        </ul>
+    </div>
+</div>
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="assets/angular.min.js" ></script>
