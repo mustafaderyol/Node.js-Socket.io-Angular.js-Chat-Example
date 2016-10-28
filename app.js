@@ -1,6 +1,6 @@
 angular.module('chatApplication', ['btford.socket-io']).
     factory('socket', function (socketFactory) {
-        var myIoSocket = io.connect('http://192.168.1.55:8081');
+        var myIoSocket = io.connect('http://78.171.172.118:8081');
 
         socket = socketFactory({
             ioSocket: myIoSocket
@@ -13,7 +13,15 @@ angular.module('chatApplication', ['btford.socket-io']).
         $scope.chatPanelMessages = [];
         $scope.chatPaneTyping = [];
         $rootScope.message = "";
-        $rootScope.username = prompt("Please enter your name", "");
+        if(!localStorage.username)
+        {
+            $rootScope.username = prompt("Please enter your name", "");
+            localStorage.setItem("username", $rootScope.username);
+        }
+        else
+        {
+            $rootScope.username = localStorage.username;
+        }
 
         $rootScope.textAreaSendKeypressFunction = function(event){
             if($scope.message.length>0 && event.which === 13)

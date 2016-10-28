@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="chatApplication">
+<html lang="en" ng-app="chatApplication"  style="background-color: #000000;">
 <head>
     <meta charset="UTF-8">
     <title>Chat</title>
@@ -16,18 +16,17 @@
     <div class="" style="float: right !important;" id="typing"></div>
     <div class="last">18:09</div>
 </div>
-<ol class="chat">
+<ol class="chat"  style="background-color: #000000;">
 
     <li ng-repeat="item in chatPanelMessages" ng-class="isMe(item.username) ? 'self' : 'other'">
         <div class="msg">
             <span><b>{{item.username}}</b></span>
-            <p>{{item.message}}</p>
+            <p style="font-size: 30px !important;">{{item.message}}</p>
             <time>{{dateFormat(item.date)}}</time>
         </div>
     </li>
 </ol>
-{{chatPaneTyping}}
-<input class="textarea" id="btn-input" type="text" placeholder="Type here!" ng-keypress="textAreaSendKeypressFunction($event)" autofocus ng-model="message" /><div class="emojis"></div>
+<input class="textarea" id="btn-input" type="text" placeholder="Birşeyler yaz...!" ng-keypress="textAreaSendKeypressFunction($event)" autofocus ng-model="message" /><div class="emojis"></div>
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="assets/angular.min.js" ></script>
