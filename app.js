@@ -1,6 +1,6 @@
 angular.module('chatApplication', ['btford.socket-io']).
     factory('socket', function (socketFactory) {
-        var myIoSocket = io.connect('http://192.168.1.54:8081');
+        var myIoSocket = io.connect('http://192.168.1.55:8081');
 
         socket = socketFactory({
             ioSocket: myIoSocket
@@ -11,7 +11,8 @@ angular.module('chatApplication', ['btford.socket-io']).
     .controller('messagePush', function ($scope, $rootScope, socket) {
 
         $scope.chatPanelMessages = [];
-        $rootScope.message = null;
+        $scope.chatPaneTyping = [];
+        $rootScope.message = "";
         $rootScope.username = prompt("Please enter your name", "");
 
         $rootScope.textAreaSendKeypressFunction = function(event){
@@ -19,6 +20,12 @@ angular.module('chatApplication', ['btford.socket-io']).
             {
                 this.pushMessageFunction();
             }
+
+            var data =  {'username':$rootScope.username};
+            socket.emit('typing:send',data,function (er) {
+                console.log(er);
+            });
+
         };
 
         $rootScope.dateFormat = function(getDate){
@@ -49,6 +56,15 @@ angular.module('chatApplication', ['btford.socket-io']).
 
             $("html, body").animate({ scrollTop: $('.chat')[0].scrollHeight }, "fast");
         });
+
+        socket.on('typing:get', function (data) {
+            $('#typing').html(data.username+" yazıyor...");
+
+            setTimeout(function(){
+                $('#typing').html("");
+            }, 2000);
+        });
+
 
         $rootScope.isMe = function(deger){
             if(deger == $rootScope.username)

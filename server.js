@@ -8,6 +8,10 @@ io.sockets.on('connection',function (socket) {
 
     socket.on('messege:send',function (data) {
         io.emit('messege:get', data);
-    })
+    });
+
+    socket.on('typing:send',function (data) {
+        io.emit('typing:get', data);
+    });
 
 });
